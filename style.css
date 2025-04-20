@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+  
+  header {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .personal-img-top {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .personal-img-top img {
+    width: 240px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .personal-img-top img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+  }
+  
+  h1.pulse-title {
+    font-size: 3rem;
+    margin: 1rem 0;
+    animation: pulseZoom 2.5s infinite ease-in-out;
+    display: inline-block;
+  }
+  
+  @keyframes pulseZoom {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .bio {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .bio:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  .bio h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00c853;
+    text-transform: uppercase;
+  }
+  
+  .bio p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .bio ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .bio ul li {
+    text-align: left;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #f0f0f0;
+  }
+  
+  .bio ul li::before {
+    content: "\2022";
+    color: #00c853;
+    position: absolute;
+    left: 0;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 900px;
+  }
+  
+  .feature-box {
+    flex: 1 1 250px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-box i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #00c853;
+    animation: pulse 2s infinite;
+  }
+  
+  .feature-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-box p {
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .buttons {
+    margin: 4rem 0 2rem;
+  }
+  
+  .buttons a {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .whatsapp-btn {
+    background: #25D366;
+    color: white;
+  }
+  
+  .whatsapp-btn:hover {
+    background: #1ebc5c;
+    transform: scale(1.05);
+  }
+  
+  .vendas-btn {
+    background: #ff8c00;
+    color: white;
+  }
+  
+  .vendas-btn:hover {
+    background: #e67e00;
+    transform: scale(1.05);
+  }
+  
+  footer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-box {
+      flex: 1 1 100%;
+    }
+  }
+  
