@@ -1,199 +1,526 @@
+/* Reset e Estilos Globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
-    color: white;
-    text-align: center;
-    padding: 0 1rem;
-    overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Logo - Versão Desktop */
+.logo-container {
+  position: absolute;
+  margin-top: 20px;
+  top: -150px;
+  right: 700px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.logo-img {
+  height: 500px;
+  width: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Seção Hero - Atualizada com bordas arredondadas */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 300px auto 20px;
+  border-radius: 12px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  max-width: 95%;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  /* Um pouco menor que o container */
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  /* Borda adicional como fallback */
+  transform: scale(1.02);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.audio-button {
+  position: absolute;
+  bottom: 20px;
+  right: 720px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.audio-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Restante do CSS permanece igual */
+.cta-section {
+  background: linear-gradient(to right, #1e1e1e, #2d2d2d);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.animated-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: flutuar 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+@keyframes flutuar {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  
-  header {
-    padding: 3rem 1rem 2rem;
+
+  50% {
+    transform: translateY(-6px);
   }
-  
-  .personal-img-top {
-    text-align: center;
-    margin-bottom: 2rem;
+}
+
+.bio-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.bio-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.bio-image img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.bio-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #00c853;
+}
+
+.bio-text p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.results-section {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.results-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #00c853;
+  position: relative;
+  display: inline-block;
+}
+
+.results-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #00c853;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.before-after-item {
+  min-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.before,
+.after {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.before:hover,
+.after:hover {
+  transform: translateY(-3px);
+}
+
+.before h3,
+.after h3 {
+  color: #00ff6a;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.before img,
+.after img,
+.before video,
+.after video {
+  width: 100%;
+  height: 250px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.carousel-controls button {
+  background: rgba(0, 200, 83, 0.2);
+  border: 2px solid #00c853;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-controls button:hover {
+  background: #00c853;
+  transform: scale(1.1);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background: #00c853;
+  transform: scale(1.2);
+}
+
+.services-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.service-box {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-box i {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #00c853;
+  animation: pulse 2s infinite;
+}
+
+.service-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
-  .personal-img-top img {
-    width: 240px;
-    height: auto;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  
-  .personal-img-top img:hover {
+
+  50% {
     transform: scale(1.1);
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
   }
-  
-  h1.pulse-title {
-    font-size: 3rem;
-    margin: 1rem 0;
-    animation: pulseZoom 2.5s infinite ease-in-out;
-    display: inline-block;
+
+  100% {
+    transform: scale(1);
   }
-  
-  @keyframes pulseZoom {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
+}
+
+.action-buttons {
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.whatsapp-btn,
+.plans-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebc5c;
+  transform: scale(1.05);
+}
+
+.plans-btn {
+  background: #1ebc5c;
+  color: white;
+}
+
+.plans-btn:hover {
+  background: #e67e00;
+  transform: scale(1.05);
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .logo-container {
+    right: 100px;
+    top: -100px;
   }
-  
-  header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+
+  .logo-img {
+    height: 350px;
   }
-  
-  .bio {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.07);
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease-in-out;
+
+  .hero-section {
+    margin-top: 200px;
   }
-  
-  .bio:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  }
-  
-  .bio h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #00c853;
-    text-transform: uppercase;
-  }
-  
-  .bio p {
-    font-size: 1rem;
-    color: #ddd;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  .bio ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .bio ul li {
-    text-align: left;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .logo-container {
     position: relative;
-    color: #f0f0f0;
-  }
-  
-  .bio ul li::before {
-    content: "\2022";
-    color: #00c853;
-    position: absolute;
-    left: 0;
-  }
-  
-  .features {
+    top: auto;
+    right: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 2rem auto;
-    max-width: 900px;
+    margin: 30px 0;
   }
-  
-  .feature-box {
-    flex: 1 1 250px;
-    background: rgba(255, 255, 255, 0.08);
+
+  .logo-img {
+    height: 250px;
+    max-width: 90%;
+    margin-top: -100px;
+  }
+
+  .hero-section {
+    height: 50vh;
+    margin-top: -140px;
+    border-radius: 15px;
+    width: calc(100% - 40px);
+  }
+
+  .video-container,
+  .video-bg {
+    border-radius: 13px;
+  }
+
+  .animated-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .bio-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .before,
+  .after {
+    min-width: 100%;
+  }
+
+  .service-box {
+    min-width: 100%;
+  }
+
+  .audio-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 400px;
+  }
+
+  .hero-section {
+    height: 60vh;
     border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
   }
-  
-  .feature-box:hover {
-    transform: translateY(-5px);
-  }
-  
-  .feature-box i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #00c853;
-    animation: pulse 2s infinite;
-  }
-  
-  .feature-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .feature-box p {
-    font-size: 0.95rem;
-    color: #ccc;
-  }
-  
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-  }
-  
-  .buttons {
-    margin: 4rem 0 2rem;
-  }
-  
-  .buttons a {
-    display: inline-block;
-    margin: 1rem;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+
+  .video-container,
+  .video-bg {
     border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.3s ease;
   }
-  
-  .whatsapp-btn {
-    background: #25D366;
-    color: white;
+
+  .animated-title {
+    font-size: 1.3rem;
   }
-  
-  .whatsapp-btn:hover {
-    background: #1ebc5c;
-    transform: scale(1.05);
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .vendas-btn {
-    background: #ff8c00;
-    color: white;
+
+  .whatsapp-btn,
+  .plans-btn {
+    width: 90%;
+    text-align: center;
   }
-  
-  .vendas-btn:hover {
-    background: #e67e00;
-    transform: scale(1.05);
+}
+
+@media (max-width: 360px) {
+  .logo-img {
+    height: 180px;
   }
-  
-  footer {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    font-size: 0.85rem;
-  }
-  
-  @media (max-width: 768px) {
-    .feature-box {
-      flex: 1 1 100%;
-    }
-  }
-  
+}
