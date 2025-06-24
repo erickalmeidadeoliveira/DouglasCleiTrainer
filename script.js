@@ -212,3 +212,26 @@ document.addEventListener('touchstart', function () {
     video.play().catch(e => console.log("Autoplay prevented:", e));
   });
 }, { once: true });
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Botão "Quero Começar Agora"
+  const btn = document.getElementById('startButton');
+  btn.addEventListener('click', () => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // Exemplo de toggle de áudio do vídeo (já existente)
+  const audioToggle = document.getElementById('audioToggle');
+  const video = document.getElementById('video');
+  audioToggle.addEventListener('click', () => {
+    video.muted = !video.muted;
+    audioToggle.innerHTML = video.muted
+      ? '<i class="fas fa-volume-mute"></i>'
+      : '<i class="fas fa-volume-up"></i>';
+  });
+});
